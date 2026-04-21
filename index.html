@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EventHub - Lifecycle & Ticketing Platform</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#4f46e5',
+                        secondary: '#ec4899',
+                        dark: '#0f172a'
+                    }
+                }
+            }
+        }
+    </script>
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="style.css">
+    <!-- Phosphor Icons -->
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+</head>
+<body class="bg-slate-50 text-slate-900 font-sans antialiased">
+    
+    <!-- Navbar -->
+    <nav class="bg-white/80 backdrop-blur-md sticky top-0 z-50 border-b border-slate-200">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-16 items-center">
+                <div class="flex items-center gap-2 cursor-pointer" onclick="router.navigate('home')">
+                    <i class="ph-fill ph-ticket text-primary text-3xl"></i>
+                    <span class="font-bold text-xl tracking-tight text-slate-900">EventHub</span>
+                </div>
+                
+                <div class="hidden md:flex items-center space-x-8" id="nav-links">
+                    <a href="#" onclick="router.navigate('home')" class="text-slate-600 hover:text-primary transition">Discover Events</a>
+                    <!-- Dynamic Links Injected by JS -->
+                </div>
+
+                <div class="flex items-center gap-4">
+                    <div id="auth-section">
+                        <!-- Login/Profile Buttons Injected by JS -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content Container (SPA views) -->
+    <main id="app-container" class="min-h-[calc(100vh-64px)] overflow-hidden relative">
+        <!-- Views will be dynamically injected here -->
+    </main>
+
+    <!-- Modal Container -->
+    <div id="modal-root"></div>
+
+    <!-- Application Logic -->
+    <script src="app.js"></script>
+</body>
+</html>
